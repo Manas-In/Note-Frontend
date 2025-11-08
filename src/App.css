@@ -1,0 +1,79 @@
+/* Tailwind base styles */
+@import "tailwindcss";
+
+/* Root Theme */
+:root {
+  --primary: #4f46e5; /* Indigo */
+  --secondary: #6366f1;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-light: #f9fafb;
+  --bg-gradient: linear-gradient(135deg, #eef2ff, #f9fafb);
+}
+
+/* Reset & Globals */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.25s ease-in-out;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+}
+.btn-primary:hover {
+  background: var(--secondary);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+.btn-outline:hover {
+  background: #eef2ff;
+}
+
+/* Hero section (Landing Page) */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+/* Card style (for Notes, etc.)
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+} */
