@@ -75,6 +75,7 @@ import axios from "axios";
 
 const isDEVELOPMENT = import.meta.env.MODE === "development";
 
+console.log("Hello")
 const baseURL = isDEVELOPMENT
   ? import.meta.env.VITE_API_URL_LOCAL
   : import.meta.env.VITE_API_URL_DEPLOY;
