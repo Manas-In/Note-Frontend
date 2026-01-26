@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../AuthProvider";
 import { useNavigate } from "react-router-dom";
+import axiosinstance from "../Axiosinstance";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,8 +27,31 @@ const Login = () => {
     setLoading("Loading...");
 
 
-    axios
-      .post("http://127.0.0.1:8000/user/login/", {
+    // axios
+    //   .post("http://127.0.0.1:8000/user/login/", {
+    //     email: fromData.email,
+    //     password: fromData.password,
+    //   })
+    //   .then((responce) => {
+    //     setlogin(responce.data);
+    //     localStorage.setItem("accessTokon", responce.data.access);
+    //     localStorage.setItem("refreshTokon", responce.data.refresh);
+    //     setIsLogin(true);
+    //     // navigate("/notes");
+    //     navigate("/notes", { replace: true });
+    //   })
+    //   .catch((error) => {
+    //     setLoading("Login Again");
+    //     if (error.response) {
+    //       setErr(error.response.data.detail || "Invalid email or password");
+    //     } else {
+    //       setErr("Something went wrong, please try again");
+    //     }
+    //   });
+    
+    
+    axiosinstance
+      .post("/user/login/", {
         email: fromData.email,
         password: fromData.password,
       })
@@ -47,6 +71,13 @@ const Login = () => {
           setErr("Something went wrong, please try again");
         }
       });
+    
+    
+    
+    
+    
+    
+    
   };
   return (
     <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-gradient-to-br from-indigo-50 via-white to-indigo-50 px-4 md:px-12">

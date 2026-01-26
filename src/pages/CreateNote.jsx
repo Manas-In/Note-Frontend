@@ -31,11 +31,11 @@ const CreateNote = () => {
     try {
       const noteCatagory = category
       await axiosinstance.post(
-        "http://127.0.0.1:8000/notes/",
+        "/notes/",
         {
           title: noteTitle,
           body: noteContent,
-          category: noteCatagory,
+          catagory: noteCatagory,
         }
         // {
         //   headers: {

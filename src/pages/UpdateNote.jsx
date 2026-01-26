@@ -29,7 +29,7 @@ const UpdateNote = () => {
     }
 
     axiosinstance
-      .get(`http://127.0.0.1:8000/notes/noteview/${slug}`
+      .get(`/notes/noteview/${slug}`
     //     , {
     //     headers: { Authorization: `Bearer ${token}` },
     //   }

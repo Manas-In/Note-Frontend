@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../AuthProvider";
 import { useNavigate } from "react-router-dom";
+import axiosinstance from "../Axiosinstance";
 
 const LoginPages = () => {
   const navigate = useNavigate();
@@ -28,8 +29,8 @@ const LoginPages = () => {
     setLoading("Loading...")
     console.log(fromData.email, fromData.password);
 
-    axios
-      .post("http://127.0.0.1:8000/user/login/", {
+    axiosinstance
+      .post("/user/login/", {
         email: fromData.email,
         password: fromData.password,
       })
