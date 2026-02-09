@@ -76,7 +76,14 @@ import axios from "axios";
 const isDEVELOPMENT = import.meta.env.MODE === "development";
 
 console.log("Hello")
-const baseURL = isDEVELOPMENT? import.meta.env.VITE_API_URL_DEPLOY : import.meta.env.VITE_API_URL_LOCAL;
+
+console.log("MODE:", import.meta.env.MODE);
+console.log("BASE URL:", baseURL);
+
+
+const baseURL = isDEVELOPMENT
+  ? import.meta.env.VITE_API_URL_LOCAL
+  : import.meta.env.VITE_API_URL_DEPLOY;
 
 const axiosinstance = axios.create({
   baseURL,
