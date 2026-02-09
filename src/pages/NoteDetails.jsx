@@ -48,7 +48,7 @@ const NoteDetails = () => {
     if (!token) return;
 
     try {
-      await axiosinstance.delete(`http://127.0.0.1:8000/notes/noteview/${slug}`
+      await axiosinstance.delete(`/notes/noteview/${slug}`
         //{     headers: {
     //       Authorization: `Bearer ${token}`,
     //     },

@@ -73,7 +73,7 @@ const UpdateNote = () => {
 
     try {
       await axiosinstance.put(
-        `http://127.0.0.1:8000/notes/noteview/${slug}`,
+        `/notes/noteview/${slug}`,
         { title: noteTitle, body: noteContent, catagory: category,updated_at :now  }
         // { headers: { Authorization: `Bearer ${token}` } }
       );
