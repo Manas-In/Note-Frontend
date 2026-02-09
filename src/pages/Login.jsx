@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../AuthProvider";
 import { useNavigate } from "react-router-dom";
-// import axiosinstance from "../Axiosinstance";
+import axiosinstance from "../Axiosinstance";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,31 +27,8 @@ const Login = () => {
     setLoading("Loading...");
 
 
-    axios
-      .post("https://note-sharing-18.onrender.com/user/login/", {
-        email: fromData.email,
-        password: fromData.password,
-      })
-      .then((responce) => {
-        setlogin(responce.data);
-        localStorage.setItem("accessTokon", responce.data.access);
-        localStorage.setItem("refreshTokon", responce.data.refresh);
-        setIsLogin(true);
-        // navigate("/notes");
-        navigate("/notes", { replace: true });
-      })
-      .catch((error) => {
-        setLoading("Login Again");
-        if (error.response) {
-          setErr(error.response.data.detail || "Invalid email or password");
-        } else {
-          setErr("Something went wrong, please try again");
-        }
-      });
-    
-    
-    // axiosinstance
-    //   .post("/user/login/", {
+    // axios
+    //   .post("https://note-sharing-18.onrender.com/user/login/", {
     //     email: fromData.email,
     //     password: fromData.password,
     //   })
@@ -71,6 +48,29 @@ const Login = () => {
     //       setErr("Something went wrong, please try again");
     //     }
     //   });
+    
+    
+    axiosinstance
+      .post("/user/login/", {
+        email: fromData.email,
+        password: fromData.password,
+      })
+      .then((responce) => {
+        setlogin(responce.data);
+        localStorage.setItem("accessTokon", responce.data.access);
+        localStorage.setItem("refreshTokon", responce.data.refresh);
+        setIsLogin(true);
+        // navigate("/notes");
+        navigate("/notes", { replace: true });
+      })
+      .catch((error) => {
+        setLoading("Login Again");
+        if (error.response) {
+          setErr(error.response.data.detail || "Invalid email or password");
+        } else {
+          setErr("Something went wrong, please try again");
+        }
+      });
     
     
     
