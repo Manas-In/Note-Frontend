@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axiosinstance from "../Axiosinstance";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -66,8 +67,8 @@ const Registration = () => {
     }
 
     // Submit registration
-    axios
-      .post("http://127.0.0.1:8000/user/register/", {
+    axiosinstance
+      .post("/user/register/", {
         username: fromData.username,
         first_name: fromData.first_name,
         last_name: fromData.last_name,
