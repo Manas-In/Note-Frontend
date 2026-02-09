@@ -13,7 +13,7 @@ const Navbar = () => {
     localStorage.removeItem("accessTokon");
     localStorage.removeItem("refreshTokon");
     setIsLogin(false);
-    console.log("LOGGED OUT ✅");
+    // console.log("LOGGED OUT ✅");
     navigate("/login");
   };
 
