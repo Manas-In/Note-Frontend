@@ -80,12 +80,17 @@ console.log(import.meta.env)
 
 let baseURL = ""
 
+console.log(import.meta.env.VITE_API_URL_LOCAL)
+
 if(isDEVELOPMENT){
    baseURL =  import.meta.env.VITE_API_URL_LOCAL;
 }else{
     baseURL = import.meta.env.VITE_API_URL_DEPLOY;
     console.log("BASE URL:", baseURL); 
 }
+
+
+
 
 // const baseURL = isDEVELOPMENT
 //   ? import.meta.env.VITE_API_URL_LOCAL
