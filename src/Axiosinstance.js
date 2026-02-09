@@ -75,17 +75,15 @@ import axios from "axios";
 
 const isDEVELOPMENT = import.meta.env.MODE === "development"
 
-console.log(import.meta.env)
 
 let baseURL = ""
 
-console.log("baseurl :" ,import.meta.env.VITE_API_URL_DEPLOY)
 
 if(isDEVELOPMENT){
    baseURL =  import.meta.env.VITE_API_URL_LOCAL;
 }else{
     baseURL = import.meta.env.VITE_API_URL_DEPLOY;
-    console.log("In Production")
+   
 }
 
 
@@ -95,8 +93,7 @@ if(isDEVELOPMENT){
 //   ? import.meta.env.VITE_API_URL_LOCAL
 //   : import.meta.env.VITE_API_URL_DEPLOY;
 
-console.log("MODE:", import.meta.env.MODE);
-console.log("BASE URL:", baseURL);  
+
 // console.log(import.meta.env)
   
 

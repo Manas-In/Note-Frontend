@@ -93,7 +93,6 @@ const NoteCardContainer = () => {
     axiosinstance
       .get("/notes/")
       .then((res) => {
-        console.log("API RESPONSE:", res.data);
 
         // ✅ Handle ALL possible backend responses safely
         if (Array.isArray(res.data)) {
